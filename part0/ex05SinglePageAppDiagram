@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant User as User
+    participant Browser as Browser
+    participant Server as Server
+
+    User->>Browser: Enter URL
+    Browser->>Server: GET SPA resources
+    Server-->>Browser: SPA resources (HTML, CSS, JS)
+    Browser->>User: Render SPA
+
+    Note over Browser: User interacts with SPA
+
+    Browser->>Server: API requests (GET, POST, etc.)
+    Server-->>Browser: JSON responses
+    Browser->>User: Update page dynamically
